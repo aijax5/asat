@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "pump": "^3.0.0"
+    "express": "^4.15.2",
+    "pump": "^3.0.0",
+    "socket.io": "^3.0.1",
+    "socket.io-client": "^3.0.1"
   }
 }
