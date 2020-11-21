@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 // socket.io sever - events caught
 var fmap = {}
 io_s.on('connection', (client)=>{
-    // console.log('a user connected.');
+    console.log('a user connected.');
     client.emit('hello-client', "start")
     client.on('register', (data)=>{
     	var res = data.split(" ")
