@@ -4,7 +4,7 @@ var io = require('socket.io')(http);
 const io_c = require("socket.io-client");
 var dl  = require('delivery');
 var fs  = require('fs');
-
+var access_key = 'DDS_is_the_best';
 var C_PORT = 8002;
 
 http.listen(C_PORT, () => {
@@ -41,7 +41,7 @@ io.on('connection', function (socket) {
 
 function performSearch() {
 	console.log(" Search fired")
-	ioClient.emit("search", "t1.mp4")
+	ioClient.emit("search", "file.mp4")
 
 }
 
@@ -79,12 +79,12 @@ ioClient = io_c.connect("http://localhost:3000"); // search server
 ioClient.on("hello-client", (data) => {
 	ioClient.emit("register", {
 		addr: C_PORT,
-		files: ['file.mp4']
+		files: ['t1.mp4']
 	});
 
 	ioClient.on("register_res", (data) => {
 		console.log("register result " + data);
-		myVar = setTimeout(performSearch, 5000);
+		myVar = setTimeout(performSearch, 15000);
 	});
 
     ioClient.on("search_res", (data) => {

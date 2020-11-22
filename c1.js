@@ -4,7 +4,7 @@ var io = require('socket.io')(http);
 const io_c = require("socket.io-client");
 var dl  = require('delivery');
 var fs  = require('fs');
-
+var access_key = 'DDS_is_the_best';
 var C_PORT = 8001;
 
 http.listen(C_PORT, () => {
@@ -23,7 +23,7 @@ io.on('connection', function (socket) {
             console.log(req)
             if(req.key === access_key){
                 delivery.send({
-                    name: 'send2.mp4',
+                    name: 'send.mp4',
                     path: './'+req.fileName
                 });
             }
@@ -84,7 +84,7 @@ ioClient.on("hello-client", (data) => {
 
 	ioClient.on("register_res", (data) => {
 		console.log("register result " + data);
-		myVar = setTimeout(performSearch, 5000);
+		myVar = setTimeout(performSearch, 17000);
 	});
 
     ioClient.on("search_res", (data) => {
