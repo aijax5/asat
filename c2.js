@@ -15,4 +15,12 @@ ioClient.on("hello-client", (data)=>{
     ioClient.emit("register","http://localhost:8090 file.mp4");
 });
 
+io_s.on('connection', (client)=>{
+    console.log('a user connected.');
+    client.emit('connected', "start")
+    client.on('download', (data)=>{
+    	console.log("download " + data)
+    });
+});
 // ioClient.emit("hello-server","aisi sexy lagraha tha!");
+
