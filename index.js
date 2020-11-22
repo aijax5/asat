@@ -32,17 +32,6 @@ io_s.on('connection', (client)=>{
     	client.emit('register_res', "success")
         console.log(mlist);
 
-<<<<<<< HEAD
-io.on('connection', (client)=>{
-    console.log('a user connected.');
-    client.on('register', (files)=>{
-      //hash
-    });
-    client.on('search', (data)=>{
-        console.log("client with ip "+" : "+data);
-        client.emit('search_res', 'found the file you were looking for');
-=======
->>>>>>> b907c6e5dcf8cde48cf7912bc1d744f38add9cc2
     });
     client.on('search', (data)=>{
 	    console.log("search");

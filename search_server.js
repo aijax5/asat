@@ -15,16 +15,16 @@ app.get('/', (req, res) => {
 });
 
 // socket.io sever - events caught
-
+var tempClient = "";
 io.on('connection', (client)=>{
     console.log('a user connected.');
-    client.on('register', (files)=>{
-      //hash
+    client.emit('hello-client',"_");
+    client.on('c5', (files)=>{
+      tempClient = client;
+
     });
     client.on('search', (data)=>{
         console.log("client with ip "+" : "+data);
-        client.emit('search_res', 'found the file you were looking for');
+        client.emit('search_res', {obj:tempClient});
     });
 });
-
-// TODO if 

@@ -34,5 +34,3 @@ ioClient.on("hello-client", (data)=>{
 	});
 });
 
-// clearTimeout(myVar);
-// ioClient.emit("hello-server","aisi sexy lagraha tha!");
